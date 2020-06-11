@@ -14,8 +14,11 @@ services:
     ports:
       - "${LOCAL_PORT}:20080"
     volumes:
-    - ws_flask_data:/ws_flask/sqlite_db
+    - ws_flask_data:/ws_flask
 #    entrypoint: ["/bin/sleep", "infinity"]
+#    entrypoint:
+#      - flask
+#      - init-db
     entrypoint:
       - gunicorn
       - --workers=2
