@@ -10,6 +10,8 @@ services:
     environment:
       - API_SERVER=${API_SERVER}
       - LOCAL_PORT=${LOCAL_PORT}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
     restart: unless-stopped
     ports:
       - "${LOCAL_PORT}:20080"
