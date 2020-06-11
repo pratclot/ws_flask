@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  ws_flask:
+    container_name: ws_flask
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ws_flask
+    environment:
+      - API_SERVER=${API_SERVER}
+      - LOCAL_PORT=${LOCAL_PORT}
+    restart: unless-stopped
+    ports:
+      - "${LOCAL_PORT}:20080"
+#    entrypoint: ["/bin/sleep", "infinity"]
+    entrypoint:
+      - gunicorn
+      - --workers=2
+      - --threads=4
+      - --worker-class=gthread
+      - --worker-tmp-dir
+      - /dev/shm
+      - -b
+      - 0.0.0.0:20080
+      - -k
+      - flask_sockets.worker
+      - app:app

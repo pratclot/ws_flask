@@ -1,0 +1,11 @@
+Flask~=1.1.2
+gevent~=20.6.0
+pip~=20.1.1
+gunicorn
+flask-sockets
+gevent-websocket
+click~=7.1.2
+oauthlib~=3.1.0
+flask-login
+google-auth
+requests
