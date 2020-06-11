@@ -13,6 +13,8 @@ services:
     restart: unless-stopped
     ports:
       - "${LOCAL_PORT}:20080"
+    volumes:
+    - ws_flask_data:/ws_flask/sqlite_db
 #    entrypoint: ["/bin/sleep", "infinity"]
     entrypoint:
       - gunicorn
@@ -26,3 +28,7 @@ services:
       - -k
       - flask_sockets.worker
       - app:app
+
+volumes:
+  ws_flask_data:
+    external: true

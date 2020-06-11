@@ -1,6 +1,7 @@
 FROM python:3.8.3-alpine
 
 ENV API_SERVER=localhost
+ENV LOCAL_PORT=20080
 
 RUN apk add --no-cache -t DEPS gcc musl-dev libffi-dev build-base
 
