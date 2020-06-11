@@ -1,0 +1,11 @@
+FROM python:3.8.3-alpine
+
+ENV API_SERVER=localhost
+
+RUN apk add --no-cache -t DEPS gcc musl-dev libffi-dev build-base
+
+WORKDIR /ws_flask
+ADD requirements.txt ./
+RUN pip wheel --wheel-dir=./deps -r requirements.txt
+
+ENTRYPOINT ["/bin/sleep", "infinity"]

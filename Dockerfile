@@ -6,7 +6,8 @@ RUN apk add --no-cache -t DEPS gcc musl-dev libffi-dev build-base
 
 WORKDIR /ws_flask
 ADD requirements.txt ./
-RUN pip install -r requirements.txt
+ADD deps/ deps/
+RUN pip install --no-index --find-links=./deps -r requirements.txt
 
 RUN apk del DEPS
 
