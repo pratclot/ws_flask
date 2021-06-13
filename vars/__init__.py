@@ -15,6 +15,9 @@ RELAY_ENDPOINTS = {
     "heater_status": "/heaterStatus",
     "pump_status": "/pumpStatus"
 }
+HEATING_ENDPOINT = {
+    "heating_status": "/heatingStatus"
+}
 CONTROL_ENDPOINTS = {
     "turn_heater_on": "/turnHeaterOn",
     "turn_heater_off": "/turnHeaterOff"
