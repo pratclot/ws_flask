@@ -15,6 +15,9 @@ RELAY_ENDPOINTS = {
     "heater_status": "/heaterStatus",
     "pump_status": "/pumpStatus"
 }
+HEATING_ENDPOINT = {
+    "heating_status": "/heatingStatus"
+}
 CONTROL_ENDPOINTS = {
     "turn_heater_on": "/turnHeaterOn",
     "turn_heater_off": "/turnHeaterOff"
@@ -27,3 +30,4 @@ GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", None)
 GOOGLE_DISCOVERY_URL = (
     "https://accounts.google.com/.well-known/openid-configuration"
 )
+DB_PATH="data/sqlite_db"

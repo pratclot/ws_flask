@@ -6,6 +6,8 @@ ENV LOCAL_PORT=20080
 RUN apk add --no-cache -t DEPS gcc musl-dev libffi-dev build-base
 
 WORKDIR /ws_flask
+RUN mkdir data
+
 ADD requirements.txt ./
 ADD deps/ deps/
 RUN pip install --no-index --find-links=./deps -r requirements.txt

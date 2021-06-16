@@ -16,7 +16,7 @@ services:
     ports:
       - "${LOCAL_PORT}:20080"
     volumes:
-    - ws_flask_data:/ws_flask
+    - ws_flask_data:/ws_flask/data
 #    entrypoint: ["/bin/sleep", "infinity"]
 #    entrypoint:
 #      - flask
